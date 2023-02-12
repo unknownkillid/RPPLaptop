@@ -1,0 +1,403 @@
+
+:root {
+    --navbar-color: rgb(1, 58, 96);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    user-select: none;
+    font-family: 'DotGothic16', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    overflow: hidden;
+    zoom: 110%;
+}
+
+.laptop {
+    zoom: 140%;
+    z-index: 11111;
+}
+
+.main-container {
+    position: relative;
+    height: 40rem;
+}
+
+.desktop {
+    width: 767px;
+    height: 432px;
+    background-color: black;
+    position: absolute;
+    top: 7%;
+    left: 15.6%;
+    background-image: url(https://i.postimg.cc/G90Td72B/Wallpaper-Dog-20495318.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    overflow: hidden;
+}
+
+.navbar-container {
+    width: 100%;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.761);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.start-logo:hover {
+    background: rgba(0, 106, 219, 0.557);
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+.startmenu-and-programs {
+    display: flex;
+    align-items: center;
+}
+
+.startmenu-and-programs img {
+    padding: 0 2px;
+}
+
+#clock {
+    color: rgb(195, 195, 195);
+}
+
+#startmenu {
+    width: 200px;
+    height: 300px;
+    background-color: rgb(52, 52, 52);
+    padding: 10px 5px;
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.start-menu i {
+    padding: 10px 0;
+    color: rgb(231, 231, 231);
+    font-family: 'DotGothic16', sans-serif;
+    width: 100%;
+}
+
+.start-menu i:hover {
+    background-color: rgb(132, 132, 132);
+}
+
+/* terminal================================ */
+
+#terminal {
+    resize: none;
+    width: 767px;
+    height: 385px;
+    outline: none;
+    background-color: black;
+    color: green;
+    border: none;
+    padding: 10px;
+    -webkit-user-select: none;
+    user-select: none;
+    position: relative;
+    cursor: default;
+}
+
+#terminal::-webkit-scrollbar {
+    background: none;
+    width: 10px;
+}
+
+#terminal::-webkit-scrollbar-thumb {
+    background-color: rgb(118, 118, 118);
+    height: 10px;
+}
+
+#terminal::-moz-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    height: 20px;
+    width: 20px;
+  }
+
+#terminalmain { 
+    display: none;
+}
+
+.terminal-nav {
+    width: 100%;
+    height: 1.2rem;
+    background-color: var(--navbar-color);
+    padding: 0 10px;
+    z-index: 1;
+}
+
+.terminal-minimize-and-off {
+    display: flex;
+    align-items: center;
+    float: right;
+}
+
+.terminal-minimize-and-off button {
+    width: 30px;
+    height: 1.2rem;
+    text-align: center;
+    background: none;
+    border: none;
+    color: rgb(235, 235, 235);
+    transition: 0.7s;
+}
+
+.terminal-minimize-and-off button:hover {
+    background-color: white;
+    color: black;
+}
+
+
+.settings-window {
+    width: 300px;
+    height: 300px;
+    background-color: rgb(210, 210, 210);
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+
+.settings-window button {
+    width: 200px;
+    height: 30px;
+    font-size: large;
+    margin: 4px 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+.settings-nav {
+    width: 300px;
+    height: 25px;
+    padding: 0 10px;
+    background-color: var(--navbar-color);
+}
+
+.settings-window a {
+    float: right;
+    text-decoration: none;
+    color: white;
+}
+
+.music { 
+    position: absolute;
+    top: 10%;
+    left: 2%;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    z-index: 0;
+} 
+
+
+.music:hover {
+    background-color: rgb(72, 140, 195);
+}
+
+.main-container label {
+    color: rgb(149, 81, 81);
+    font-size: 12px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.music-label {
+    color: white;
+    position: absolute;
+    top: 19%;
+    left: 2.8%;
+    font-size: small;
+}
+
+.wallpaper {
+    position: absolute;
+    top: 26%;
+    left: 2%;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+} 
+
+.wall-title {
+    position: absolute;
+    top: 35%;
+    left: 1.6%;
+    color: white;
+}
+
+.wallpaper:hover {
+    background-color: rgb(72, 140, 195);
+}
+
+/* background change window */
+
+.bg-nav{
+    width: 300px;
+    height: 15px;
+    background-color: rgb(1, 58, 96);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0 5px;
+    z-index: 111111;
+}
+
+.bg-nav button {
+    width: 20px;
+    height: 15px;
+    font-size: 8px;
+}
+
+.background-change-window {
+    width: 300px;
+    height: 402px;
+    background: rgb(51, 139, 255);
+    z-index: 1;
+    float: right;
+    overflow-y: scroll;
+    position: absolute;
+    top: 30px;
+    right: -40%;
+    transition: 1s;
+    display: none;
+    overflow-x: hidden;
+}
+
+.card1 {
+    width: 270px;
+    height: 150px;
+    background: white;
+    margin: 10px 0;
+    background-size: 110%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 1s;
+    border-radius: 8px;
+}
+
+.card1:hover {
+    transform: scale(105%);
+    filter:brightness(150%);
+}
+
+.cards-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.background-change-window::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgba(0, 0, 0, 0.832);
+}
+
+.background-change-window::-webkit-scrollbar-thumb {
+    background-color: rgb(1, 63, 135);
+    border-radius: 10px;
+}
+
+.skull {
+    background-image: url(https://i.postimg.cc/MTFYsrS3/pixelated-hacker-poison-skull-gg733qbdv3fhhumk.jpg);
+}
+
+.anonymous {
+    background-image: url(https://i.postimg.cc/fb37VfXx/8c627d0108845d3a82f3bd876e8733a7.png);
+}
+
+.road {
+    background-image: url(https://i.postimg.cc/3xQCkv16/wallpaperflare-com-wallpaper-5.jpg);
+}
+
+.girlanime{
+    background-image: url(https://i.postimg.cc/RF2GGb1C/wallpaperflare-com-wallpaper-10.jpg);
+}
+
+.cybergirl {
+    background-image: url(https://i.postimg.cc/7LFTRvRR/wallpaperflare-com-wallpaper-11.jpg);
+}
+
+.hacker {
+    background-image: url(https://i.postimg.cc/JhLLYPqq/wallpaperflare-com-wallpaper-7.jpg);
+}
+
+.joker {
+    background-image: url(https://i.postimg.cc/wv4nzVhn/wallpaperflare-com-wallpaper-3.jpg);
+}
+
+.samurai {
+    background-image: url(https://i.postimg.cc/43BSv5Fn/wallpaperflare-com-wallpaper-4.jpg);
+}
+
+.anon2 {
+    background-image: url(https://i.postimg.cc/xT3hTnyK/wallpaperflare-com-wallpaper-6.jpg);
+}
+
+.hack {
+    background-image: url(https://i.postimg.cc/NF4DYfqF/wallpaperflare-com-wallpaper-9.jpg);
+}
+
+.royal {
+    background-image: url(https://i.postimg.cc/j2dNHHmq/Wallpaper-Dog-20495318.jpg);
+}
+
+.noplace {
+    background-image: url(https://i.postimg.cc/G239VcQq/wallpaperflare-com-wallpaper-8.jpg);
+}
+
+#wallminimized {
+    padding:0 10px;
+    display: none;
+}
+
+/* music player========================================= */
+
+
+.music-player {
+    width: 100%;
+    height: 403px;
+    display: flex;
+    flex-direction: row;
+    display: none;
+}
+
+.music-list {
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.825);
+    height: 403px;
+    padding: 10px;
+}
+
+.music-controls-and-logo {
+    background-color: rgba(0, 0, 0, 0.699);
+    height: 403px;
+    width: 500px;
+    padding: 20px;
+}
+
+#musicplayericonminimize {
+    padding:0 9px;
+    display: none;
+}
+
+.start-menu-settings {
+    display: flex;
+}

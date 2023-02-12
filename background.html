@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/background.css">
+    <!-- font awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- pixel fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <!-- oswald fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+        <img src="https://i.postimg.cc/ncZZJhPT/pngfind-com-acer-laptop-png-6436538.png" class="laptop" alt="">
+        <div class="desktop" id="desktop">
+            <header>
+                <nav>
+                    <div class="navbar-container">
+                        <div class="startmenu-and-programs">
+                            <img src="https://i.postimg.cc/c426q5j0/Main-Logo.png" width="50px" class="start-logo"
+                                title="Start Menu" id="startmenubutton">
+                            <img src="https://i.postimg.cc/BnQ6KLz7/pngegg-1.png" width="30px" class="files"
+                                title="Files" alt="">
+                            <img src="https://i.postimg.cc/FF8x7Xsw/Pngtree-browser-icon-4422366.png" width="45px"
+                                class="browser" title="Internet" alt="">
+                            <img src="https://i.postimg.cc/1XQ5jzrL/pngegg-3.png" width="30px" class="terminal"
+                                title="Terminal" onclick="terminalOnOff()" id="terminalbutton">
+                            <img src="https://i.postimg.cc/dVN80FcD/wallpaper.png" width="45px" id="wallminimized"
+                                class="wallpaperminimized">
+                        </div>
+
+                        <div class="start-menu-settings">
+                            <img src="https://i.postimg.cc/v8W0BJNv/music.png" width="42px" class="musicminimize"
+                                id="musicplayericonminimize" title="Music Player" alt="">
+                            <div id="clock"></div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <label class="music-label" id="displaynonelabel1" for="musicplayer">Music</label>
+            <img src="https://i.postimg.cc/v8W0BJNv/music.png" width="30px" class="music" id="musicplayericon"
+                title="Music Player" alt="">
+
+            <label for="wallpaper" id="displaynonelabel2" class="wall-title">Wallpapers</label>
+            <img src="https://i.postimg.cc/dVN80FcD/wallpaper.png" width="30px" class="wallpaper" id="wallpaper" onclick="wallpaperOn()">
+
+
+            <div class="start-menu" id="startmenu">
+                <i class="fa-solid fa-video camera"> Camera Hacking </i>
+                <br> <i class="fa-solid fa-headphones listen"> Mic Hacking </i>
+                <br> <i class="fa-solid fa-tv"> Hack TV </i>
+                <br> <i class="fa-solid fa-mobile-button"> Phone Hacking </i>
+                <br> <i class="fa-solid fa-sack-dollar"> Dark Web </i>
+            </div>
+
+            <div class="terminal" id="terminalmain">
+                <header>
+                    <nav>
+                        <div class="terminal-nav">
+                            <div class="terminal-minimize-and-off">
+                                <button class="minimize" id="minimize" onclick="terminalOnOff()"><i
+                                        class="fa-solid fa-window-minimize"></i></button>
+                                <button class="settings" id="settings" onclick="settingsMenu()"><i
+                                        class="fa-solid fa-gear"></i></button>
+                                <button class="off" id="off"><i class="fa-solid fa-x"
+                                        onclick="terminalOff()"></i></button>
+                            </div>
+                        </div>
+                    </nav>
+                </header>
+
+                <textarea id="terminal">
+                                     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⠚     `⠑⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠞⠀⠀⠀⠀⠀⠀⠀ ⠀⠱⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                ⠀⠀⠀⠀⠀⠀⠀⠀⢀⠏⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠹⡀⠀⠀⠀⠀⠀⠀⠀⠀
+                                ⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⠀⠀⠀⠀⣀⣀⠀⠀⠀ ⠀⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀
+                                ⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⣠⠔⠋⠉⣩⣍⠉⠙⠢⣄⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀
+                                ⠀⠀⠀⠀⠀⠀⠀⠀⢧⡜⢏⠓⠒⠚⠁⠈⠑⠒⠚⣹⢳⡸⠀⠀⠀⠀⠀⠀⠀⠀
+                                ⠀⠀⠀⠀⠀⠀⠀⠀⠘⣆⠸⡄⠀⠀⠀⠀⠀⠀⢠⠇⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀
+                                ⠀⠀⠀⠀⠀⠀⢀⡴⠚⠉⢣⡙⢦⡀⠀⠀⢀⡰⢋⡜⠉⠓⠦⣀⠀⠀⠀⠀⠀⠀
+                                ⠀⠀⠀⠀⠀⡴⠁⢀⣀⣀⣀⣙⣦⣉⣉⣋⣉⣴⣋⣀⣀⣀⡀⠈⢧⠀⠀⠀⠀⠀
+                                ⠀⠀⠀⠀⡸⠁⠀⢸⠀⠀⠀⠀⢀⣔⡛⠛⡲⡀⠀⠀⠀⠀ ⡇⠀ ⠈⢇⠀⠀⠀⠀
+                                ⠀⠀⠀⢠⠇⠀⠀⠸⡀⠀⠀⠀⠸⣼⠽⠯⢧⠇⠀⠀ ⠀⠀⡇⠀ ⠀⠘⡆⠀⠀⠀
+                                ⠀⠀⠀⣸⠀⠀⠀⠀⡇⠀⠀⠀⠳⢼⡦⢴⡯⠞⠀⠀⠀  ⢰⠀ ⠀⠀⠀⢧⠀⠀⠀
+                                ⠀⠀⠀⢻⠀⠀⠀⠀⡇⠀⠀⠀⢀⡤⠚⠛⢦⣀⠀⠀  ⠀⢸⠀⠀ ⠀⠀⡼⠀⠀⠀
+                                ⠀⠀⠀⠈⠳⠤⠤⣖⣓⣒⣒⣒⣓⣒⣒⣒⣒⣚⣒⣒⣒⣚⣲⠤⠤⠖⠁⠀
+                                      try /help for see all commands
+
+Anonymous ~ Root: </textarea>
+
+                <div class="settings-window" id="settingswindow">
+                    <header>
+                        <nav>
+                            <div class="settings-nav">
+                                <a href="#" id="settingsX" onclick="settingsMenu()">X</a>
+                            </div>
+                        </nav>
+                    </header>
+                    <button class="white-and-black" id="bw" onclick="setColor('black')"> Black On White </button>
+                    <button class="black-and-white" id="wb" onclick="setColor('white')"> White On Black </button>
+                    <button class="black-and-green" id="gb" onclick="setColor('green')"> Green On Black </button>
+                    <button class="dracula" id="bp" onclick="setColor('pink')"> Black And Pink </button>
+                    <button class="black-and-aqua" id="ab" onclick="setColor('aqua')"> Aqua On Black </button>
+                    <button class="Black-and-purple" id="pb" onclick="setColor('purple')"> Purple On Black </button>
+                    <button class="black-and-crimson" id="cb" onclick="setColor('crimson')"> Crimson On Black </button>
+                </div>
+            </div>
+
+            <div class="background-change-window" id="wallpaperwindow">
+                <div>
+                    <header>
+                        <nav>
+                            <div class="bg-nav" id="bgnav">
+                                <button class="bg-minimize" id="bgMinimize"><i
+                                        class="fa-solid fa-window-minimize"></i></button>
+                                <button class="bg-off" id="bgOff"><i class="fa-solid fa-x"></i></button>
+                            </div>
+                        </nav>
+                    </header>
+                </div>
+
+                <div class="cards-container">
+                    <div class="card1 skull" id="skullWallpaper"></div>
+                    <div class="card1 anonymous" id="anonymousWallpaper"></div>
+                    <div class="card1 road" id="roadWallpaper"></div>
+                    <div class="card1 girlanime" id="animeGirlWallpaper"></div>
+                    <div class="card1 cybergirl" id="cyberGirlWallpaper"></div>
+                    <div class="card1 hacker" id="hackerWallpaper"></div>
+                    <div class="card1 joker" id="jokerWallpaper"></div>
+                    <div class="card1 samurai" id="samuraiWallpaper"></div>
+                    <div class="card1 anon2" id="anonWallpaper"></div>
+                    <div class="card1 hack" id="hackWallpaper"></div>
+                    <div class="card1 royal" id="royalWallpaper"></div>
+                    <div class="card1 noplace" id="noplaceWallpaper"></div>
+                </div>
+            </div>
+
+            <div class="music-player" id="musicPlayer">
+                <header>
+                    <nav>
+                        <div class="music-player-nav">
+
+                        </div>
+                    </nav>
+                </header>
+
+                <div class="music-list">
+                    <audio src="assets/Mobb Deep - Shook Ones, Pt. II (Official HD Video).mp3"></audio>
+                    <audio src="assets/Mobb Deep - Survival of the Fittest (Official Video) [Explicit].mp3"></audio>
+                </div>
+
+                <div class="music-controls-and-logo">
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+<script src="js/laptop.js"></script>
+
+</html>
