@@ -1,4 +1,3 @@
-
 :root {
     --navbar-color: rgb(1, 58, 96);
 }
@@ -18,7 +17,20 @@ body {
     align-items: center;
     height: 90vh;
     overflow: hidden;
-    zoom: 110%;
+    zoom: 100%;
+    animation-name: zoomanimation;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-delay: 0.3s;
+    animation-duration: 2s;
+    opacity: 0;
+}
+
+@keyframes zoomanimation {
+    100% {
+        transform: scale(107%);
+        opacity: 1;
+    }
 }
 
 .laptop {
@@ -127,9 +139,9 @@ body {
     border-radius: 10px;
     height: 20px;
     width: 20px;
-  }
+}
 
-#terminalmain { 
+#terminalmain {
     display: none;
 }
 
@@ -198,7 +210,7 @@ body {
     color: white;
 }
 
-.music { 
+.music {
     position: absolute;
     top: 10%;
     left: 2%;
@@ -206,7 +218,7 @@ body {
     height: 40px;
     padding: 5px;
     z-index: 0;
-} 
+}
 
 
 .music:hover {
@@ -234,7 +246,7 @@ body {
     width: 40px;
     height: 40px;
     padding: 5px;
-} 
+}
 
 .wall-title {
     position: absolute;
@@ -249,7 +261,7 @@ body {
 
 /* background change window */
 
-.bg-nav{
+.bg-nav {
     width: 300px;
     height: 15px;
     background-color: rgb(1, 58, 96);
@@ -295,7 +307,7 @@ body {
 
 .card1:hover {
     transform: scale(105%);
-    filter:brightness(150%);
+    filter: brightness(150%);
 }
 
 .cards-container {
@@ -327,7 +339,7 @@ body {
     background-image: url(https://i.postimg.cc/3xQCkv16/wallpaperflare-com-wallpaper-5.jpg);
 }
 
-.girlanime{
+.girlanime {
     background-image: url(https://i.postimg.cc/RF2GGb1C/wallpaperflare-com-wallpaper-10.jpg);
 }
 
@@ -364,7 +376,7 @@ body {
 }
 
 #wallminimized {
-    padding:0 10px;
+    padding: 0 10px;
     display: none;
 }
 
@@ -381,23 +393,183 @@ body {
 
 .music-list {
     width: 300px;
-    background-color: rgba(0, 0, 0, 0.825);
+    background-color: #590000;
+    background-image: linear-gradient(180deg, #590000 0%, #000000 100%);
+    box-shadow: 0px 0px 40px black;
+    z-index: 111;
     height: 403px;
     padding: 10px;
+    color: white;
 }
 
 .music-controls-and-logo {
-    background-color: rgba(0, 0, 0, 0.699);
+    background-color: #590000;
+    background-image: linear-gradient(180deg, #590000 0%, #000000 100%);
     height: 403px;
     width: 500px;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 #musicplayericonminimize {
-    padding:0 9px;
+    padding: 0 9px;
     display: none;
 }
 
 .start-menu-settings {
     display: flex;
+}
+
+.darkweb {
+    width: 100%;
+    height: 403px;
+    background-color: black;
+    display: none;
+}
+
+.darkweb-navbar {
+    width: 100%;
+    height: 15px;
+    background: var(--navbar-color);
+}
+
+.darkweb-welcome {
+    width: 100%;
+    height: 403px;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.welcome {
+    font-size: xx-large;
+    animation-name: welcometext;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    width: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 50px;
+    white-space: nowrap;
+    animation-timing-function: steps(30, end);
+}
+
+@keyframes welcometext {
+    100% {
+        width: 100%;
+    }
+}
+
+#track1 {
+    text-decoration: none;
+    color: white;
+}
+
+.musicplayer-logo {
+    width: 200px;
+    height: 200px;
+    background-image: url(https://i.postimg.cc/pVhbJ4s9/download.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 100%;
+}
+
+.musicplayer-controls {
+    width: 70%;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+}
+
+.musicplayer-controls button {
+    text-align: center;
+    border: none;
+    background: none;
+    color: rgba(255, 255, 255, 0.839);
+    font-weight: bolder;
+
+}
+
+.pauseresume {
+    width: 100px;
+}
+
+.loading {
+    height: 433px;
+    width: 100%;
+    background-color: rgb(33, 33, 33);
+    z-index: 5555555;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loading-bar {
+    width: 50%;
+    height: 20px;
+    background-color: rgb(0, 0, 0);
+    margin: 10px;
+    padding: 10px 3px;
+    display: flex;
+    align-items: center;
+}
+
+.loading-bg {
+    background-color: rgb(219, 219, 219);
+    animation: loadingbar 15s forwards;
+    animation-delay: 2s;
+    width: 0;
+    height: 15px;
+}
+
+.loadingtxt {
+    color: white;
+}
+
+@keyframes loadingbar {
+    0% {
+        width: 0%;
+    }
+    10% {
+        width: 63%;
+    }
+    20% {
+        width: 63%;
+    }
+    30% {
+        width: 63%;
+    }
+    40% {
+        width: 63%;
+    }
+    50% {
+        width: 88%;
+    }
+    60% {
+        width: 88%;
+    }
+    70% {
+        width: 88%;
+    }
+    80% {
+        width: 88%;
+    }
+    100% {
+        width: 100%;
+    }
 }
