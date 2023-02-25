@@ -1,4 +1,3 @@
-
 // Time and Date
   const timeinterval = setInterval(() => {
     const date = new Date();
