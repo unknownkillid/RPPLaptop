@@ -25,6 +25,17 @@
     <div class="main-container">
         <img src="https://i.postimg.cc/ncZZJhPT/pngfind-com-acer-laptop-png-6436538.png" class="laptop" alt="">
         <div class="desktop" id="desktop">
+
+            <div class="loading" id="loading">
+                <div class="loading-gif">
+                    <img src="https://i.postimg.cc/XNFg5PjG/giphy.gif" alt="">
+                </div>
+                <div class="loading-bar">
+                    <div class="loading-bg" id="loadingbg"></div>
+                </div>
+                <div class="loadingtxt" id="loadingtext">Loading 0%</div>
+            </div>
+
             <header>
                 <nav>
                     <div class="navbar-container">
@@ -34,7 +45,7 @@
                             <img src="https://i.postimg.cc/BnQ6KLz7/pngegg-1.png" width="30px" class="files"
                                 title="Files" alt="">
                             <img src="https://i.postimg.cc/FF8x7Xsw/Pngtree-browser-icon-4422366.png" width="45px"
-                                class="browser" title="Internet" alt="">
+                                class="browser" title="DarkWeb Browser" alt="">
                             <img src="https://i.postimg.cc/1XQ5jzrL/pngegg-3.png" width="30px" class="terminal"
                                 title="Terminal" onclick="terminalOnOff()" id="terminalbutton">
                             <img src="https://i.postimg.cc/dVN80FcD/wallpaper.png" width="45px" id="wallminimized"
@@ -55,7 +66,8 @@
                 title="Music Player" alt="">
 
             <label for="wallpaper" id="displaynonelabel2" class="wall-title">Wallpapers</label>
-            <img src="https://i.postimg.cc/dVN80FcD/wallpaper.png" width="30px" class="wallpaper" id="wallpaper" onclick="wallpaperOn()">
+            <img src="https://i.postimg.cc/dVN80FcD/wallpaper.png" width="30px" class="wallpaper" id="wallpaper"
+                onclick="wallpaperOn()">
 
 
             <div class="start-menu" id="startmenu">
@@ -75,8 +87,8 @@
                                         class="fa-solid fa-window-minimize"></i></button>
                                 <button class="settings" id="settings" onclick="settingsMenu()"><i
                                         class="fa-solid fa-gear"></i></button>
-                                <button class="off" id="off"><i class="fa-solid fa-x"
-                                        onclick="terminalOff()"></i></button>
+                                <button onclick="terminalOnOff()" class="off" id="off"><i
+                                        class="fa-solid fa-x"></i></button>
                             </div>
                         </div>
                     </nav>
@@ -159,14 +171,37 @@ Anonymous ~ Root: </textarea>
                 </header>
 
                 <div class="music-list">
+                    <a href="#" id="track1">Mobb Deep Shook Ones</a>
                     <audio src="assets/Mobb Deep - Shook Ones, Pt. II (Official HD Video).mp3"></audio>
                     <audio src="assets/Mobb Deep - Survival of the Fittest (Official Video) [Explicit].mp3"></audio>
                 </div>
 
                 <div class="music-controls-and-logo">
+                    <div class="musicplayer-logo"></div>
 
+                    <div class="musicplayer-controls">
+                        <button class="back">Prev</button>
+                        <button class="pauseresume" id="pauseresume">Play</button>
+                        <button class="next">Next</button>
+                    </div>
                 </div>
 
+            </div>
+
+            <div class="darkweb" id="darkweb">
+                <header>
+                    <nav>
+                        <div class="darkweb-navbar" id="darkwebnavbar">
+
+                        </div>
+                    </nav>
+                </header>
+
+                <div class="darkweb-welcome">
+                    <div>
+                        <p class="welcome"> Welcome to my WORLD </p>
+                    </div>
+                </div>
             </div>
 
         </div>
