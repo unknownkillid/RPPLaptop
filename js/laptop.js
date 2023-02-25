@@ -1,13 +1,11 @@
 
 // Time and Date
-setInterval(function() {
+  const timeinterval = setInterval(() => {
     const date = new Date();
     const time = date.toLocaleTimeString();
     const clockElement = document.getElementById("clock");
-    clockElement.innerHTML = time;
+    clockElement.innerHTML = time;    
   }, 1000);
-
-
 
   // Start Menu show and hide
   let startMenu = document.getElementById('startmenu');
@@ -48,7 +46,7 @@ terminal.spellcheck = false;
 let terminalscrolldown = 99999999999;
 let defaultText = "\nAnonymous ~ Root: ";
 let unknownCommand = "\nUnknown Command";
-let help = "\nYou can use next commands for use Terminal: /help, /whoami, /clear, /ifconfig, /wallpaper";
+let help = "\nYou can use next commands for use Terminal: /help, /whoami, /clear, /ifconfig, /wallpaper, /ls";
 const ifconfig = 
 "\neth0  Link encap:Ethernet  HWaddr 00:0B:CD:1C:18:5A" +
 "inet addr:172.16.25.126  Bcast:172.16.25.63  Mask:255.255.255.224" +
@@ -59,6 +57,10 @@ const ifconfig =
 "carrier:0 collisions:0 txqueuelen:1000" +
 "RX bytes:293460932 (279.8 MiB)  TX bytes:1042006549 (993.7 MiB)" +
 "Interrupt:185 Memory:f7fe0000-f7ff0000";
+
+let update = "\nAnonymous ~ Root: apt";
+let terminalDownloadline = "\n-----------------------------------------------------------------------------";
+let terminalDownload = "\n#############################################################################";
 
 function scrolldown(){
   terminal.scrollTop = terminalscrolldown;
@@ -98,8 +100,17 @@ terminal.addEventListener("keydown", function(event) {
       scrolldown();
       preventdefault();
       wallpaperOn();
-    }
-    
+    } else if (terminal.value.endsWith('\nAnonymous ~ Root: /ls')){
+      terminal.value += "\n/Home/System/HackTool";
+      terminal.value += defaultText;
+      scrolldown();
+      preventdefault();
+    } else if (terminal.value.endsWith(update)) {
+      terminal.value += terminalDownloadline;
+      terminal.value += defaultText;
+      scrolldown();
+      preventdefault();
+    } 
     
     else {
       terminal.value += unknownCommand;
@@ -149,9 +160,7 @@ function setColor(givenColor) {
 
 // terminal x button 
 
-function terminalOff(){
-  window.location.reload();
-}
+
 
 // background window on off
 
@@ -316,3 +325,60 @@ navbarmusicicon.addEventListener('click', function(){
     wallpapericon.style.display = "none";
   }
 });
+
+let musicPlayerPauseResume = document.getElementById('pauseresume');
+
+musicPlayerPauseResume.addEventListener('click', function(){
+  if (musicPlayerPauseResume.textContent === "Play"){
+    list.pause();
+    musicPlayerPauseResume.textContent = "Pause";
+  } else {
+    list.play();
+    musicPlayerPauseResume.textContent = "Play";
+  }
+});
+
+let list = new Audio();
+
+let track = document.getElementById('track1');
+
+track.addEventListener('click', function(){
+  let flag = 1;
+  if (flag === 1) {
+    flag = 0;
+    list.play();
+  } else {
+    flag = 1;
+    list.pause();
+  }
+})
+
+let loadingTxt = document.getElementById('loadingtext');
+let loadingBg = document.getElementById("loadingbg");
+let loadingMain = document.getElementById('loading');
+
+setInterval(() => {
+  const startTime = performance.now();
+
+function updateLoadingText() {
+  const currentTime = performance.now();
+  const progress = Math.min((currentTime - startTime) / 7000, 1); // 5000ms = 5s (animation duration)
+  const percentage = Math.round(loadingBg.offsetWidth / loadingBg.parentElement.offsetWidth * 102);
+  loadingTxt.textContent = "Loading " + percentage + '%';
+  
+  loadingMain.style.transition = "2s";
+  
+  if (progress < 1) {
+    requestAnimationFrame(updateLoadingText);
+  }
+}
+
+requestAnimationFrame(updateLoadingText);
+}, 1000);
+
+setTimeout(() => {
+  const opacinterval = setInterval(() => {
+    loadingMain.style.display = "none";
+  }, 3000);
+  loadingMain.style.opacity = 0;
+}, 18000);
